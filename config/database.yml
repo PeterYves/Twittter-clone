@@ -1,0 +1,29 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: clone_development
+  #username: clone
+  #password:
+  #host: localhost
+  #port: 5432
+
+  #schema_search_path: myapp,sharedapp,public
+
+  # Minimum log levels, in increasing order:
+  
+  #min_messages: notice
+
+test:
+  <<: *default
+  database: clone_test
+
+
+production:
+  <<: *default
+  database: clone_production
+  username: clone
+  password: <%= ENV['CLONE_DATABASE_PASSWORD'] %>

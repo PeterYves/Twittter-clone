@@ -1,0 +1,25 @@
+<%= form_with(model: @t_clone, local: true ,url: choose_new_or_edit ) do |form| %>
+  <% if @t_clone.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @t_clone.errors.count %>errors occurred.</h2>
+    <ul>
+
+    <% @t_clone.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+<div class="link">
+<%= link_to 'View tweets list page', t_clones_path %>
+</div>

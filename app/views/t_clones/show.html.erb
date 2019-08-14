@@ -1,0 +1,18 @@
+<div id="main">
+<div id="header">
+<p>Welcome to My Twitter Clone app</p>
+</div>
+<div id="content">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @t_clone.content %>
+</p>
+<div class="link">
+<%= link_to 'Edit', edit_t_clone_path(@t_clone) %></div> |
+<div class="link">
+<%= link_to 'Back', t_clones_path %></div>
+</div>
+<div id="footer">&copy copyright peter yves</div>
+</div>

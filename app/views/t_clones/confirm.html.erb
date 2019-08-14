@@ -1,0 +1,23 @@
+<div id="main">
+<div id="header">
+<p>Welcome to My Twitter Clone app</p>
+</div>
+<div id="content">
+<h3>Send it with the following contents.</h3>
+
+<%= form_with(model: @t_clone, url: t_clones_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+
+  <p>Body:<%= @t_clone.content %></p>
+  <%= form.submit  "submit" %>
+<% end %>
+
+<%= form_with(model: @t_clone, url: new_t_clone_path, method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+  <div class="link">
+<%= link_to 'Back', t_clones_path %>
+</div>
+<% end %>
+</div>
+<div id="footer">&copy copyright peter yves</div>
+</div>

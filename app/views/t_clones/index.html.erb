@@ -1,0 +1,36 @@
+<div id="main">
+<div id="header">
+<p>Welcome to My Twitter Clone app</p>
+</div>
+<div id="content">
+<p id="notice"><%= notice %></p>
+
+<h1>All Tweets</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @t_clones.each do |t_clone| %>
+      <tr>
+        <td><%= t_clone.content %></td>
+        <td class="action"><%= link_to 'Show', t_clone %></td>
+        <td class="action"><%= link_to 'Edit', edit_t_clone_path(t_clone),data: { confirm: 'Are you sure to edit it？' } %></td>
+        <td class="action"><%= link_to 'Destroy', t_clone, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<hr>
+<div class="link">
+<%= link_to 'Add New Tweet', new_t_clone_path %>
+</div>
+</div>
+<div id="footer">&copy copyright peter yves</div>
+</div>
