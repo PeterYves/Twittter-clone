@@ -4,5 +4,5 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
-  get 'clone/index'
+  root 't_clones#index'
 end
